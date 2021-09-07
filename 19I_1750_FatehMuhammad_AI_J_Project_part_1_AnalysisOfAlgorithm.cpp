@@ -165,7 +165,7 @@ int main(){
           object->task_name = arrayOfwords[1];
           object->deadline =  stoi(arrayOfwords[2]);
           object->duration =  stoi(arrayOfwords[3]);
-          cout << start_time <<":adding " << object->task_name << " with deadline " << object->deadline <<           " and duration " << object->duration  << endl;
+          cout << start_time <<":adding " << object->task_name << " with deadline " << object->deadline << " and duration " << object->duration  << endl;
           priority_queue->insert(object);
 
       }else if(arrayOfwords[0] == "run"){
@@ -180,15 +180,15 @@ int main(){
                   tempPointer = priority_queue->extract();
                 if(tempPointer->duration <= current_time + max_run_time){
 
-                        cout << start_time << ":busy with " << tempPointer->task_name << " with deadline "                              <<tempPointer->deadline << " and duration " << tempPointer->duration  << endl;
+                        cout << start_time << ":busy with " << tempPointer->task_name << " with deadline " <<tempPointer->deadline << " and duration " << tempPointer->duration  << endl;
 
                 }else if (tempPointer->duration > max_run_time){
-                      cout << start_time << ":busy with " << tempPointer->task_name << " with deadline "                              <<tempPointer->deadline << " and duration " << tempPointer->duration  << endl;
+                      cout << start_time << ":busy with " << tempPointer->task_name << " with deadline " <<tempPointer->deadline << " and duration " << tempPointer->duration  << endl;
                 }
                   start_time += tempPointer->duration;
                   if((start_time + tempPointer->duration) <= start_time + max_run_time){
                         if(start_time > tempPointer->deadline){
-                            cout << start_time << ":Done with " << tempPointer->task_name << " (late)"                                       << endl;
+                            cout << start_time << ":Done with " << tempPointer->task_name << " (late)"  << endl;
                         }else{
                             cout << start_time << ":Done with " << tempPointer->task_name << endl;
                         }
